@@ -1,29 +1,20 @@
-# Assignment No. 1: Bitwise AND and XOR on String Characters
-
-# Start the program
 s = input("Enter a string: ")
 
-# Display original string
-print("Original String:", s)
-
-# Initialize empty strings
 and_result = ""
 xor_result = ""
+print("\nCharacter|ASCII|AND|XOR")
 
-# Traverse each character
 for c in s:
-    ascii_value = ord(c)   # Convert character to ASCII value
+    ascii_value = ord(c)   
     
-    # Bitwise AND with 127
-    and_char = chr(ascii_value & 127)
+    and_val = ascii_value & 127
+    and_char = chr(and_val)
     and_result += and_char
     
-    # Bitwise XOR with 127
-    xor_char = chr(ascii_value ^ 127)
+    xor_val = ascii_value ^ 127
+    xor_char = chr(xor_val)
     xor_result += xor_char
+    print(f"{c:^7} | {ascii_value:^4} | {and_val:^3} | {xor_val:^3}")
 
-# Display results
 print("After AND with 127 :", and_result)
-print("After XOR with 127 :", xor_result)
-
-# Stop the program
+print("After XOR with 127 :", repr(xor_result))
